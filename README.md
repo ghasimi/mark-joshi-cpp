@@ -2,6 +2,8 @@
 
 Summary notes on [Mark Joshi](https://en.wikipedia.org/wiki/Mark_S._Joshi)'s C++ Design Patterns and Derivatives Pricing
 
+![book cover](https://assets.cambridge.org/97805217/21622/cover/9780521721622.jpg)
+
 I was lucky to find this book in my journey to learn C++ programming in finance. This repo is an attempt to collect and share some notes and insights from the book. Please comment if you see any error or misconception. Thank you.
 
 ## Table of contents
