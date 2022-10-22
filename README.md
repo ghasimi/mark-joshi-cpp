@@ -152,5 +152,21 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
   PayFactoryMain.cpp  
   
 11. Design patterns revisited
-
+  │
+  ├─ Creational
+  │   ├─ Virtual copy constructor
+  │   ├─ The factory
+  │   ├─ Singleton
+  │   └─ Monostate
+  │
+  ├─ Structural
+  │   ├─ Adapter
+  │   ├─ Bridge
+  │   └─ Decorator
+  │
+  └─ Behavioural
+      |
+      ├─ Strategy
+      ├─ Template
+      └─ Iterator    
 ```
