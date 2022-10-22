@@ -48,7 +48,6 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
   DoubleDigital.cpp
   SimpleMCMain5.cpp
 
-  
 4. Bridge with a virtual Constructor
   4.2. A first solution
   Vanilla1.h
@@ -81,9 +80,21 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
   SimpleMC6.h
   SimpleMC6.cpp
   VanillaMain4.cpp
-   
 
 5. Strategies, decoration and statistics
+  MCStatistics.h
+  MCStatistics.cpp
+  SimpleMC7.h
+  SimpleMC7.cpp
+  StatsMain1.cpp
+  
+  5.4. Templates and wrappers
+  Wrapper.h
+  Wrapper.cpp
+  ConvergenceTable.h
+  ConvergenceTable.cpp
+  StatsMain2.cpp
+
 6. A random number class
 7. An exotics engine and the template pattern
 8. Trees
