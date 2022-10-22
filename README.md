@@ -18,3 +18,29 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
 10. The factory
 11. Design patterns revisited
 
+
+## Codes by Chapter
+```
+1. A simple Monte Carlo Model
+  SimpleMCMain1.cpp
+  Random1.h
+  Random1.cpp
+
+2. Encapsulation
+  PayOff1.h
+  PayOff1.cpp
+  SimpleMC.h
+  SimpleMC.cpp
+  SimpleMCMain2.cpp
+
+3. Inheritence and virtual functions
+4. Bridge with a virtual Constructor
+5. Strategies, decoration and statistics
+6. A random number class
+7. An exotics engine and the template pattern
+8. Trees
+9. Solvers, templates, and implied volatitlites
+10. The factory
+11. Design patterns revisited
+
+```
