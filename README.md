@@ -96,6 +96,16 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
   StatsMain2.cpp
 
 6. A random number class
+  Random2.h
+  Random2.cpp  
+  ParkMiller.h
+  ParkMiller.cpp
+  AntiThetiic.h
+  AntiThetiic.cpp
+  SimpleMC8.h
+  SimpleMC8.cpp
+  RandomMain3.cpp
+  
 7. An exotics engine and the template pattern
 8. Trees
 9. Solvers, templates, and implied volatitlites
