@@ -107,7 +107,28 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
   RandomMain3.cpp
   
 7. An exotics engine and the template pattern
+  PathDependent.h
+  PathDependent.cpp
+  ExoticEngine.cpp
+  ExoticBSEngine.h
+  ExoticBSEngine.cpp
+  PathDependentAsian.h
+  PathDependentAsian.cpp
+  EquityFXMain.cpp
+  
 8. Trees
+  TreeProducts.h
+  TreeProducts.cpp
+  TreeAmerican.h
+  TreeAmerican.cpp
+  TreeEuropean.h
+  TreeEuropean.cpp
+  BinomialTree.h
+  BinomialTree.cpp
+  TreeMain.cpp
+  PayOffForward.h
+  PayOffForward.cpp
+  
 9. Solvers, templates, and implied volatitlites
 10. The factory
 11. Design patterns revisited
