@@ -130,6 +130,18 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
   PayOffForward.cpp
   
 9. Solvers, templates, and implied volatitlites
+  BSCallClass.h
+  BSCallClass.cpp
+  Bisection.h
+  Bisection.cpp
+  SolveMain1.cpp
+  
+  NewtonRaphson.h
+  NewtonRaphson.cpp
+  BSCallTwo.h
+  BSCallTwo.cpp
+  SolveMain2.cpp
+  
 10. The factory
 11. Design patterns revisited
 
