@@ -20,6 +20,42 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
 10. The factory
 11. Design patterns revisited
 
+## 1. A simple Monte Carlo Model
+
+```
+  SimpleMCMain1.cpp
+  Random1.h
+  Random1.cpp
+```  
+
+Mark Joshi starts with a simple implementation of Monte Carlo simulation to price an option, while the next chapters improves the program step-by-step. In ```SimpleMCMain1.cpp```, there is a function, ```SimpleMonteCarlo1```, which shows one of the first ideas: __pre-calculate fixed parts once__ to save time and computational power. In this particular case, the movedSpot represents part of the formula that remains fixed for all paths of simulation. 
+
+```c++
+double SimpleMonteCarlo1(
+  double Expiry,
+  double Strike,  
+  double Spot,  
+  double Vol,  
+  double r,  
+  unsigned long NumberOfPaths
+  )
+{
+  double variance = Vol*Vol*Expiry;
+  ...
+  double itoCorrection = -.5 * variance;
+  double movedSpot = Spot * exp(r * Expiry + itoCorrection);
+  ...
+  for (unsigned long i=0; i < NumberOfPaths; i++)
+  {
+    ...
+     thisSpot = movedSpot * exp(...);
+    ...
+  }
+  ...
+}
+```
+
+
 
 ## Codes by Chapter
 ```
