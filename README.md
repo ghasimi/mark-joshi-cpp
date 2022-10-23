@@ -165,7 +165,6 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
   │   └─ Decorator
   │
   └─ Behavioural
-      |
       ├─ Strategy
       ├─ Template
       └─ Iterator    
