@@ -126,6 +126,30 @@ double SimpleMonteCarlo2(
 
 Finally, it introduces the __open-closed__ principle, or lack of it in the current ```PayOff``` class. The problem is is that if we make any change to this class, for example by adding a _digital option_ as a new option type and make the corresponding changes to the ```operator()``` method, then any code that depends on this class needs to be recompiled. This sets the stage for introduction of inheritence and virtual functions in chapter 3.
 
+## 3. Inheritence and virtual functions
+
+```
+  PayOff2.h
+  PayOff2.cpp
+  SimpleMC2.h
+  SimpleMC2.cpp
+  SimpleMCMain3.cpp
+  
+  SimpleMCMain4.cpp
+  
+  DoubleDigital.h
+  DoubleDigital.cpp
+  SimpleMCMain5.cpp  
+```
+
+This chapter introduces __inheritence__, __virtual_function__ (including _pure_), __interface__ and __implementation__, and dynamic memory allocation using ```new``` keword. It shows these ideas via a _parent_ class ```PayOff``` and _child_ classes of ```PayOffCall```, ```PayOffPut```, and ```PayOffDoubleDigital```. A key concept is how to build functions with parameters while we don't know their exact type in advance, i.e. we want to keep it open for extention. Two ideas are shown:
+
+1. Using reference: In ```SimpleMCMain3.cpp```, a _referecne_ to the _child_ class (e.g. ```PayOffCall```) is passed as argument, even though the function expected a _parent_ class reference.
+
+2. Using pointer: In ```SimpleMCMain4.cpp```, a pointer of type _parent_ class is created (i.e. ```PayOff* thePayOffPtr```) which will be pointed to a _child_ class, e.g. ```thePayOffPtr = new PayOffCall(Strike)```. Then this pointer is passed as argument, after derefrencing, i.e. ```*thePayOffPtr```.
+
+The last part is demonestration of extendability of this design by creating a new payoff class,  ```PayOffDoubleDigital```. The point is that the codes that depend based on the interface, ```PayOff```, do not need to be recompiled. The new payoff class is used in the ```SimpleMCMain5.cpp```. 
+
 
 ## Codes by Chapter
 ```
