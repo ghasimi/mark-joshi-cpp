@@ -185,7 +185,41 @@ VanillaOption::VanillaOption(const PayOff& ThePayOff_, ...)
   // ThePayOffPtr is a private member of type PayOff*
   ThePayOffPtr = ThePayOff_.clone(); 
 }
+...
 ```
+Other details leads the discussion to the __rule of three__, which states that "if any one of destructor, assignment operator, and copy constructor is needed for a class then all three are".
+
+The next part moves the discussion to a desire to have "a pay-off class that has the nice polymorphic features that our class does, whilst taking care of its own memory management". Mark Joshi names some options:
+
+1. A wrapper class that has templatized, but "this is really a generic programming rather than object-oriented programming".
+2. The bridge pattern, which is demonestrated here, by stripping out ```Expiry``` and ```GetExpiry()``` from the vanilla option, and moving them to the newly created ```PayOffBridge```. 
+
+```
+  4.5 The bridge
+  PayOffBridge.h
+  PayOffBridge.cpp
+  Vanilla3.h
+  Vanilla3.cpp 
+  SimpleMC5.h
+  SimpleMC5.cpp
+  VanillaMain3.cpp
+```
+
+A related concept here is memory, and the downside of using the ```new``` which uses __heap__ vs __stack__ memory. The final part is about using the bridge pattern to create a parameter class.
+
+```
+  4.7. A parameter class
+  Parameters.h
+  Parameters.cpp
+  SimpleMC6.h
+  SimpleMC6.cpp
+  VanillaMain4.cpp
+```  
+
+Via this parameter class, Mark Joshi shows another key idea:
+
+> "When implementing a financial models, we never actually need instantaneous value of parameter: it is always the integral or the integral of the square that is important." ~ Mark Joshi 
+
 
 
 ## Codes by Chapter
