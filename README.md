@@ -161,7 +161,7 @@ The last part is demonestration of extendability of this design by creating a ne
   VanillaMain1.cpp
 ```
 
-The challenge is around ```VanillaOption```, an option object with attribuets like ```Expiray``` and a payoff method ```OptionPayOff(Spot)``` which relies on a ```PayOff`` object. The idea is that if we construct the option object with a _reference_ to the payoff then the option is no longer an independent. One approach is _virtual copy constructor_, which allows the option to create a _new_ copy of the payoff object at the time of construction. 
+The challenge is around ```VanillaOption```, an option object with attribuets like ```Expiray``` and a payoff method ```OptionPayOff(Spot)``` which relies on a ```PayOff``` object. The idea is that if we construct the option object with a _reference_ to the payoff then the option is no longer an independent. One approach is _virtual copy constructor_, which allows the option to create a _new_ copy of the payoff object at the time of construction. 
 
 ```
   4.3 Virtual construction
