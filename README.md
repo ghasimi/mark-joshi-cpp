@@ -150,6 +150,43 @@ This chapter introduces __inheritence__, __virtual_function__ (including _pure_)
 
 The last part is demonestration of extendability of this design by creating a new payoff class,  ```PayOffDoubleDigital```. The point is that the codes that depend based on the interface, ```PayOff```, do not need to be recompiled. The new payoff class is used in the ```SimpleMCMain5.cpp```. 
 
+## 4. Bridge with a virtual Constructor
+
+```
+  4.2. A first solution
+  Vanilla1.h
+  Vanilla1.cpp
+  SimpleMC3.h
+  SimpleMC3.cpp
+  VanillaMain1.cpp
+```
+
+The challenge is around ```VanillaOption```, an option object with attribuets like ```Expiray``` and a payoff method ```OptionPayOff(Spot)``` which relies on a ```PayOff`` object. The idea is that if we construct the option object with a _reference_ to the payoff then the option is no longer an independent. One approach is _virtual copy constructor_, which allows the option to create a _new_ copy of the payoff object at the time of construction. 
+
+```
+  4.3 Virtual construction
+  PayOff3.h
+  PayOff3.cpp 
+  Vanilla2.h
+  Vanilla2.cpp 
+  SimpleMC4.h
+  SimpleMC4.cpp
+  VanillaMain2.cpp
+```  
+
+The ```PayOff3``` shows the _virtual copy constructor_ via the ```clone()``` method, which remains of type ```PayOff*``` in child classes. Now the vanilla option looks like this:
+
+```c++
+// Vanilla2.cpp
+
+VanillaOption::VanillaOption(const PayOff& ThePayOff_, ...)
+  ...
+{
+  // ThePayOffPtr is a private member of type PayOff*
+  ThePayOffPtr = ThePayOff_.clone(); 
+}
+```
+
 
 ## Codes by Chapter
 ```
