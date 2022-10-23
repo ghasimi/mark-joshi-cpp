@@ -28,11 +28,11 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
   Random1.cpp
 ```  
 
-Mark Joshi starts with a simple implementation of Monte Carlo simulation to price an option, while the next chapters improves the program step-by-step. The code will simulates the underlying price $S$ hundreds of times, calculates the option's payoff $f$, and returns the mean of the payoffs discounted by $e^{-rT}$ as the option price. 
+Mark Joshi starts with a simple implementation of Monte Carlo simulation to price an option, while the next chapters improves the program step-by-step. The code simulates the underlying price $S$ hundreds of times, calculates the option's payoff $f$, and returns the mean of the payoffs discounted by $e^{-rT}$ as the option price. 
 
 $${S_t = S_0 \ exp \left( {(r - \frac{\sigma^2}{2})T + \sigma \sqrt{T}x } \right) \ , \ x \sim N(0,1)}$$
 
-and 
+Example of the payoff for a call option: 
 
 $$f(S) = (S - K)+ \ , \ S \text{: Spot, } K \text{: Strike}$$
 
