@@ -8,7 +8,7 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
 
 ## Table of contents
 
-1. A simple Monte Carlo Model
+1. A simple Monte Carlo model
 2. Encapsulation
 3. Inheritence and virtual functions
 4. Bridge with a virtual Constructor
@@ -19,6 +19,53 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
 9. Solvers, templates, and implied volatitlites
 10. The factory
 11. Design patterns revisited
+
+## 1. A simple Monte Carlo model
+
+```
+  SimpleMCMain1.cpp
+  Random1.h
+  Random1.cpp
+```  
+
+Mark Joshi starts with a simple implementation of Monte Carlo simulation to price an option, while the next chapters improves the program step-by-step. The code will simulates the underlying price $S$ hundreds of times, calculates the option's payoff $f$, and returns the mean of the payoffs discounted by $e^{-rT}$ as the option price. 
+
+$${S_t = S_0 \ exp \left( {(r - \frac{\sigma^2}{2})T + \sigma \sqrt{T}x } \right) \ , \ x \sim N(0,1)}$$
+
+and 
+
+$$f(S) = (S - K)+ \ , \ S \text{: Spot, } K \text{: Strike}$$
+
+
+In ```SimpleMCMain1.cpp```, there is a function, ```SimpleMonteCarlo1```, which shows one of the first ideas: __pre-calculate fixed parts once__ to save time and computational power. In this particular case, the ```movedSpot``` represents part of the formula that remains fixed for all paths of the simulation. 
+
+```c++
+// SimpleMCMain1.cpp
+
+double SimpleMonteCarlo1(
+  double Expiry,
+  double Strike,  
+  double Spot,  
+  double Vol,  
+  double r,  
+  unsigned long NumberOfPaths
+  )
+{
+  double variance = Vol*Vol*Expiry;
+  ...
+  double itoCorrection = -.5 * variance;
+  double movedSpot = Spot * exp(r * Expiry + itoCorrection);
+  ...
+  for (unsigned long i=0; i < NumberOfPaths; i++)
+  {
+    ...
+     thisSpot = movedSpot * exp(...);
+    ...
+  }
+  ...
+}
+```
+
 
 
 ## Codes by Chapter
