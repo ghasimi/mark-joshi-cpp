@@ -20,6 +20,66 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
 10. The factory
 11. Design patterns revisited
 
+## 2. Encapsulation
+
+```
+  PayOff1.h
+  PayOff1.cpp
+  SimpleMC.h
+  SimpleMC.cpp
+  SimpleMCMain2.cpp
+```
+
+Chapter 2 introduces __encapsulation__ by creating the ```PayOff``` class. Another ideas is the overloading of ```operator()``` as a ```const```:
+
+```c++
+// PayOff1.h
+
+class PayOff
+{
+...
+public:
+  ...
+  enum OptionType {call, put};
+  PayOff(...);
+  double operator()(operator spot) const;
+  
+private:
+  double Strike;
+  OptionType TheOptionType; // enum
+...
+}
+```
+
+which returns the payoff for the spot argument. The ```const``` part prevents the class from modifying the state of the object. The ```PayOff`` is now passed by reference to the Monte Carlo function:
+
+
+```c++
+// SimpleMC.cpp
+
+double SimpleMonteCarlo2(
+  const PayOff& thePayOff
+  double Expiry,
+  double Spot,  
+  double Vol,  
+  double r,  
+  unsigned long NumberOfPaths
+  )
+{
+  ...
+  for (unsigned long i=0; i < NumberOfPaths; i++)
+  {
+    ...
+     thisSpot = ...;
+     double thisPayOff = thePayOff(thisSpot);
+    ...
+  }
+  ...
+}
+```
+
+Finally, it introduces the __open-closed__ principle, or lack of it in the current ```PayOff``` class. The problem is is that if we make any change to this class, for example by adding a _digital option_ as a new option type and make the corresponding changes to the ```operator()``` method, then any code that depends on this class needs to be recompiled. This sets the stage for introduction of inheritence and virtual functions in chapter 3.
+
 
 ## Codes by Chapter
 ```
