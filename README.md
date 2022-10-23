@@ -40,6 +40,8 @@ $$f(S) = (S - K)+ \ , \ S \text{: Spot, } K \text{: Strike}$$
 In ```SimpleMCMain1.cpp```, there is a function, ```SimpleMonteCarlo1```, which shows one of the first ideas: __pre-calculate fixed parts once__ to save time and computational power. In this particular case, the ```movedSpot``` represents part of the formula that remains fixed for all paths of the simulation. 
 
 ```c++
+// SimpleMCMain1.cpp
+
 double SimpleMonteCarlo1(
   double Expiry,
   double Strike,  
