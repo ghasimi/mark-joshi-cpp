@@ -8,7 +8,7 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
 
 ## Table of contents
 
-1. A simple Monte Carlo Model
+1. A simple Monte Carlo model
 2. Encapsulation
 3. Inheritence and virtual functions
 4. Bridge with a virtual Constructor
@@ -20,7 +20,7 @@ I was lucky to find this book in my journey to learn C++ programming in finance.
 10. The factory
 11. Design patterns revisited
 
-## 1. A simple Monte Carlo Model
+## 1. A simple Monte Carlo model
 
 ```
   SimpleMCMain1.cpp
